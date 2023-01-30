@@ -9,9 +9,11 @@ This is a webapp where you can book an appointment with a doctor.
 ### 📃Features :
 
 <ul>
-<li>User can register and login</li>
-<li>User can also apply for becoming a doctor on our site</li>
-<li>User can book an appointment of their own choice</li>
+<li>User can register and login.</li>
+<li>There is also an admin managment system.</li>
+<li>User can also apply for becoming a doctor on our site.</li>
+<li>User can book an appointment of their own choice.</li>
+<li>All the data will be stored on the database so there is no chance of losing you information.</li>
 </ul>
 
 <hr/>
