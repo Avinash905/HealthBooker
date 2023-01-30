@@ -13,6 +13,9 @@ This is a webapp where you can book an appointment with a doctor.
 <li>There is also an admin managment system.</li>
 <li>User can also apply for becoming a doctor on our site.</li>
 <li>User can book an appointment of their own choice.</li>
+<li>Admin has the control to accept any user's request to become a doctor.</li>
+<li>Admin can also remove any user from the site.</li>
+<li>Doctor and Admin have the control to mark if the appointment is completed.</li>
 <li>All the data will be stored on the database so there is no chance of losing you information.</li>
 </ul>
 
