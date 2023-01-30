@@ -1,0 +1,49 @@
+@import url(app.css);
+
+.profile-container {
+  width: 40%;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-same-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-container .form-input {
+  width: 100%;
+}
+
+.gohome {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+}
+
+@media (max-width: 1230px) {
+  .profile-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 828px) {
+  .profile-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 655px) {
+  .profile-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 493px) {
+  .profile-container {
+    width: 70%;
+  }
+
+  .form-same-row {
+    flex-direction: column;
+  }
+}

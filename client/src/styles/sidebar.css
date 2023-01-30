@@ -1,0 +1,71 @@
+@import url(app.css);
+
+.sidebar-section {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 119, 255, 1) 0%,
+    rgba(64, 164, 255, 1) 100%
+  );
+  width: 18vw;
+  height: 100vh;
+  box-shadow: 0 0 10px 0 var(--darker-blue);
+  position: sticky;
+  top: 0%;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.sidebar-container > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-container ul > li,
+.logout-container {
+  font-size: 1.2rem;
+  color: var(--white);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sidebar-container a,
+.logout-container a {
+  color: var(--white);
+}
+
+@media (max-width: 1126px) {
+  .sidebar-section {
+    width: 22vw;
+  }
+}
+
+@media (max-width: 875px) {
+  .sidebar-section {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar-section {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 537px) {
+  .sidebar-section {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 426px) {
+  .sidebar-section {
+    width: 45vw;
+  }
+}

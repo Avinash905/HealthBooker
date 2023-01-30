@@ -1,0 +1,95 @@
+@import url(app.css);
+
+.user-section {
+  width: 75vw;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+}
+
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+th {
+  text-align: center;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  background-color: rgb(143, 188, 255);
+  color: var(--bold-text-color);
+  border: 1px solid gray;
+}
+
+tr {
+  padding-bottom: 10px;
+}
+
+tr:nth-child(2n + 1) {
+  background-color: rgb(231, 231, 231);
+}
+
+tr:nth-child(2n + 2) {
+  background-color: rgb(210, 228, 255);
+}
+
+td {
+  padding: 10px;
+  color: var(--light-text-color);
+  text-align: center !important;
+}
+
+.user-btn {
+  background-color: rgb(233, 83, 113);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.user-btn:hover {
+  background-color: crimson;
+}
+
+@media (max-width: 1126px) {
+  .user-section {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 875px) {
+  .user-section {
+    width: 65vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .user-section {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 537px) {
+  .user-section {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 426px) {
+  .user-section {
+    width: 50vw;
+  }
+}

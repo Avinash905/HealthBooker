@@ -1,0 +1,15 @@
+@import url(app.css);
+
+.apply-doctor-section {
+  margin: 0 auto;
+  width: 30%;
+}
+
+.apply-doctor-container {
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+option {
+  text-transform: capitalize;
+}

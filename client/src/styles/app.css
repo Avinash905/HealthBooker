@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900;1000&family=Poppins:wght@300;500;700;900&family=Quicksand:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400;500;700;900&family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --light-blue: #e9f1fa;
+  --dark-blue: #00abe4;
+  --darker-blue: #0077ff;
+  --white: #fff;
+  --bold-text-color: #1e375a;
+  --light-text-color: rgba(30, 55, 90, 0.7);
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-blue);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--bold-text-color);
+}
+
+p {
+  color: var(--light-text-color);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.btn:hover {
+  background-color: var(--darker-blue);
+}
+
+.disabled {
+  cursor: auto;
+}
+
+.disabled:hover {
+  background-color: var(--dark-blue);
+}
+
+.layout-container {
+  display: flex;
+}
+
+.loader {
+  width: 80vw;
+  height: 100vh;
+  display: flex !important;
+  margin: auto;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 896px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 596px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 60%;
+  }
+}
