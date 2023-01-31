@@ -33,7 +33,7 @@ export const admin = [
 export const doctor = [
   {
     name: "Home",
-    path: "/",
+    path: "/home",
     icon: <AiFillHome />,
   },
   {
@@ -56,7 +56,7 @@ export const doctor = [
 export const user = [
   {
     name: "Home",
-    path: "/",
+    path: "/home",
     icon: <AiFillHome />,
   },
   {
