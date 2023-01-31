@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "https://mernquizapp.onrender.com/api",
+  "proxy": "https://healthbooker.onrender.com/api",
   "homepage":"https://healthbooker.onrender.com/",
   "private": true,
   "dependencies": {
