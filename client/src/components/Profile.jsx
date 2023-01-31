@@ -86,26 +86,34 @@ function Profile() {
       } else if (password !== confpassword) {
         return toast.error("Passwords do not match");
       }
-      const { data } = await axios.put(
-        "/user/updateprofile",
-        {
-          firstname,
-          lastname,
-          age,
-          mobile,
-          address,
-          gender,
-          email,
-          password,
-        },
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`,
+      const { data } = await toast.promise(
+        axios.put(
+          "/user/updateprofile",
+          {
+            firstname,
+            lastname,
+            age,
+            mobile,
+            address,
+            gender,
+            email,
+            password,
           },
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        ),
+        {
+          pending: "Updating profile...",
+          success: "Profile updated successfully",
+          error: "Unable to update profile",
+          loading: "Updating profile...",
         }
       );
+
       setFormDetails({ ...formDetails, password: "", confpassword: "" });
-      return toast.success(data);
     } catch (error) {
       return toast.error("Unable to update profile");
     }

@@ -5,11 +5,16 @@ import { MdLogout } from "react-icons/md";
 import { admin, user, doctor } from "../helper/sidebarLinks";
 import axios from "axios";
 import token from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoading } from "../redux/reducers/rootSlice";
+import Loading from "./Loading";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Sidebar() {
   const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.root);
 
   const logoutFunc = () => {
     localStorage.removeItem("token");
@@ -35,30 +40,36 @@ function Sidebar() {
   };
 
   useEffect(() => {
+    dispatch(setLoading(true));
     getUser();
+    dispatch(setLoading(false));
   }, []);
 
   return (
-    <section className="sidebar-section flex-center">
-      <div className="sidebar-container">
-        <ul>
-          {data.map((ele, i) => {
-            return (
-              <li key={i}>
-                {ele.icon}
-                <NavLink to={ele.path}>{ele.name}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="logout-container">
-          <MdLogout />
-          <NavLink to={"/"} onClick={logoutFunc}>
-            Logout
-          </NavLink>
-        </div>
-      </div>
-    </section>
+    <>
+      {!loading && (
+        <section className="sidebar-section flex-center">
+          <div className="sidebar-container">
+            <ul>
+              {data.map((ele, i) => {
+                return (
+                  <li key={i}>
+                    {ele.icon}
+                    <NavLink to={ele.path}>{ele.name}</NavLink>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="logout-container">
+              <MdLogout />
+              <NavLink to={"/"} onClick={logoutFunc}>
+                Logout
+              </NavLink>
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 }
 
