@@ -3,10 +3,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
-import { Protected, Public } from "./middleware/route";
-import { useSelector } from "react-redux";
-import Profile from "./components/Profile";
-import Layout from "./pages/Layout";
+import { Protected, Public, Admin } from "./middleware/route";
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import Doctors from "./pages/Doctors";
+import Appointments from "./pages/Appointments";
+import Error from "./pages/Error";
+import Notifications from "./pages/Notifications";
+import ApplyDoctor from "./pages/ApplyDoctor";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -14,12 +19,8 @@ function App() {
       <Toaster />
       <Routes>
         <Route
-          path="/"
-          element={
-            <Public>
-              <Login />
-            </Public>
-          }
+          path="/login"
+          element={<Login />}
         />
         <Route
           path="/register"
@@ -30,10 +31,18 @@ function App() {
           }
         />
         <Route
-          path="/home"
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/doctors"
+          element={<Doctors />}
+        />
+        <Route
+          path="/appointments"
           element={
             <Protected>
-              <Layout />
+              <Appointments />
             </Protected>
           }
         />
@@ -41,31 +50,15 @@ function App() {
           path="/notifications"
           element={
             <Protected>
-              <Layout />
+              <Notifications />
             </Protected>
           }
         />
         <Route
-          path="/users"
+          path="/applyfordoctor"
           element={
             <Protected>
-              <Layout />
-            </Protected>
-          }
-        />
-        <Route
-          path="/appointments"
-          element={
-            <Protected>
-              <Layout />
-            </Protected>
-          }
-        />
-        <Route
-          path="/doctorapply"
-          element={
-            <Protected>
-              <Layout />
+              <ApplyDoctor />
             </Protected>
           }
         />
@@ -76,6 +69,42 @@ function App() {
               <Profile />
             </Protected>
           }
+        />
+        <Route
+          path="/dashboard/users"
+          element={
+            <Admin>
+              <Dashboard type={"users"} />
+            </Admin>
+          }
+        />
+        <Route
+          path="/dashboard/doctors"
+          element={
+            <Admin>
+              <Dashboard type={"doctors"} />
+            </Admin>
+          }
+        />
+        <Route
+          path="/dashboard/appointments"
+          element={
+            <Protected>
+              <Dashboard type={"appointments"} />
+            </Protected>
+          }
+        />
+        <Route
+          path="/dashboard/applications"
+          element={
+            <Protected>
+              <Dashboard type={"applications"} />
+            </Protected>
+          }
+        />
+        <Route
+          path="*"
+          element={<Error />}
         />
       </Routes>
     </Router>

@@ -5,25 +5,20 @@ import toast from "react-hot-toast";
 import Loading from "./Loading";
 import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
-import jwt_decode from "jwt-decode";
+import Empty from "./Empty";
+import fetchData from "../helper/apiCall";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
-function Users() {
-  const [data, setData] = useState([]);
+const Users = () => {
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
 
   const getAllUsers = async (e) => {
     try {
-      const { userId } = jwt_decode(localStorage.getItem("token"));
-      const temp = await axios.get("/user/getallusers", {
-        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
-      });
-      temp.data = temp.data.filter((ele) => {
-        return ele._id !== userId;
-      });
-      setData(temp.data);
+      const temp = await fetchData(`/user/getallusers`);
+      setUsers(temp);
     } catch (error) {}
   };
 
@@ -65,11 +60,13 @@ function Users() {
       ) : (
         <section className="user-section">
           <h3 className="home-sub-heading">All Users</h3>
-          {data.length > 0 ? (
+          {users.length > 0 ? (
             <div className="user-container">
               <table>
                 <thead>
                   <tr>
+                    <th>S.No</th>
+                    <th>Pic</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -81,18 +78,24 @@ function Users() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data?.map((ele) => {
+                  {users?.map((ele, i) => {
                     return (
                       <tr key={ele._id}>
-                        <td data-title="Provider Name">{ele.firstname}</td>
-                        <td data-title="Provider Name">{ele.lastname}</td>
-                        <td data-title="E-mail">{ele.email}</td>
-                        <td data-title="E-mail">{ele.mobile}</td>
-                        <td data-title="E-mail">{ele.age}</td>
-                        <td data-title="E-mail">{ele.gender}</td>
-                        <td data-title="E-mail">
-                          {ele.isDoctor ? "Yes" : "No"}
+                        <td>{i + 1}</td>
+                        <td>
+                          <img
+                            className="user-table-pic"
+                            src={ele.pic}
+                            alt={ele.firstname}
+                          />
                         </td>
+                        <td>{ele.firstname}</td>
+                        <td>{ele.lastname}</td>
+                        <td>{ele.email}</td>
+                        <td>{ele.mobile}</td>
+                        <td>{ele.age}</td>
+                        <td>{ele.gender}</td>
+                        <td>{ele.isDoctor ? "Yes" : "No"}</td>
                         <td className="select">
                           <button
                             className="btn user-btn"
@@ -110,12 +113,12 @@ function Users() {
               </table>
             </div>
           ) : (
-            <h2 className="nothing flex-center">Nothing to show</h2>
+            <Empty />
           )}
         </section>
       )}
     </>
   );
-}
+};
 
 export default Users;

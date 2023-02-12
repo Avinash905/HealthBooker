@@ -1,0 +1,12 @@
+@import url(app.css);
+
+.doctors {
+  margin-bottom: 5rem;
+}
+
+.doctors-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3rem;
+}

@@ -19,9 +19,9 @@ const schema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    timing: {
-      type: String,
-      required: true,
+    isDoctor: {
+      type: Boolean,
+      default: false,
     },
   },
   {

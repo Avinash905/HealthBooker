@@ -1,0 +1,55 @@
+@import url(app.css);
+
+.hero {
+  display: flex;
+  height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+}
+
+.hero-img {
+  flex: 1;
+}
+
+.hero-img img {
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 770px) {
+  .hero,
+  .about {
+    flex-direction: column;
+  }
+  .hero-content {
+    margin-top: 2rem;
+    align-items: center;
+  }
+  .hero-content h1 {
+    text-align: center;
+  }
+  .about-heading {
+    margin-top: 4rem;
+  }
+}

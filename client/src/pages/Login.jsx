@@ -3,10 +3,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setUserInfo } from "../redux/reducers/rootSlice";
+import jwt_decode from "jwt-decode";
+import fetchData from "../helper/apiCall";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Login() {
+  const dispatch = useDispatch();
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
@@ -44,34 +49,21 @@ function Login() {
         }
       );
       localStorage.setItem("token", data.token);
-      getUser();
-      return navigate("/home");
+      dispatch(setUserInfo(jwt_decode(data.token).userId));
+      getUser(jwt_decode(data.token).userId);
     } catch (error) {
       return error;
     }
   };
 
-  const getUser = async () => {
+  const getUser = async (id) => {
     try {
-      const temp = await axios.get("/user/getcurrentuser", {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      const { firstname, lastname, email, age, mobile, gender, address } =
-        temp.data;
-      localStorage.setItem(
-        "userInfo",
-        JSON.stringify({
-          firstname,
-          lastname,
-          email,
-          age,
-          mobile,
-          gender,
-          address,
-        })
-      );
+      const temp = await fetchData(`/user/getuser/${id}`);
+      dispatch(setUserInfo(temp));
+      if (temp.isAdmin === true) {
+        return navigate("/dashboard/users");
+      }
+      return navigate("/");
     } catch (error) {
       return error;
     }
@@ -81,7 +73,10 @@ function Login() {
     <section className="register-section flex-center">
       <div className="register-container flex-center">
         <h2 className="form-heading">Sign In</h2>
-        <form onSubmit={formSubmit} className="register-form">
+        <form
+          onSubmit={formSubmit}
+          className="register-form"
+        >
           <input
             type="email"
             name="email"
@@ -98,13 +93,19 @@ function Login() {
             value={formDetails.password}
             onChange={inputChange}
           />
-          <button type="submit" className="btn form-btn">
+          <button
+            type="submit"
+            className="btn form-btn"
+          >
             sign in
           </button>
         </form>
         <p>
           Not a user?{" "}
-          <NavLink className="login-link" to={"/register"}>
+          <NavLink
+            className="login-link"
+            to={"/register"}
+          >
             Register
           </NavLink>
         </p>

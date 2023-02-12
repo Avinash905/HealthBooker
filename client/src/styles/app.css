@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--light-blue);
@@ -38,6 +42,12 @@ h6 {
   color: var(--bold-text-color);
 }
 
+.page-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
 p {
   color: var(--light-text-color);
 }
@@ -46,6 +56,16 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 80%;
+  margin: 2rem auto;
 }
 
 .btn {
@@ -76,13 +96,20 @@ p {
 
 .layout-container {
   display: flex;
+  gap: 1rem;
 }
 
 .loader {
   width: 80vw;
-  height: 100vh;
+  height: 90vh;
   display: flex !important;
   margin: auto;
+}
+
+.nothing {
+  font-size: 3rem;
+  color: rgba(30, 55, 90, 0.3);
+  height: 100%;
 }
 
 @media (max-width: 1024px) {

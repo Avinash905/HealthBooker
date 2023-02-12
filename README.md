@@ -10,16 +10,28 @@ This is a webapp where you can book an appointment with a doctor.
 
 <ul>
 <li>User can register and login.</li>
+<li>You can view all available doctors on the site.</li>
+<li>You can also update your profile.</li>
+<li>You can also send your queries to us from the contact section.</li>
+<li>You can view all your notifications in the notifications tab.</li>
 <li>There is also an admin managment system.</li>
+<li>You can only access your notications, profile, appointments, doctor application if you're logged in</li>
 <li>User can also apply for becoming a doctor on our site.</li>
-<li>User can book an appointment of their own choice.</li>
+<li>User can book an appointment with the doctor of their own choice.</li>
 <li>Admin has the control to accept any user's request to become a doctor.</li>
-<li>Admin can also remove any user from the site.</li>
+<li>Admin can also remove any user or doctor from the site.</li>
 <li>Doctor and Admin have the control to mark if the appointment is completed.</li>
+<li>User will recieve notification if their application is accepted or rejected.</li>
+<li>User and Doctor will recieve notification if their appointment is completed.</li>
+<li>Doctor will recieve notification if someone booked appointment with them.</li>
 <li>All the data will be stored on the database so there is no chance of losing you information.</li>
 </ul>
 
 <hr/>
+
+### Home page
+
+<img src="./client/src/images/full_pic.png" alt='home'/>
 
 ### Sign up page
 
@@ -29,25 +41,41 @@ This is a webapp where you can book an appointment with a doctor.
 
 <img src="./client/src/images/signin.png" alt='signin'/>
 
-### Home page
-
-<img src="./client/src/images/signin.png" alt='home'/>
-
 ### Profile page
 
 <img src="./client/src/images/profile.png" alt='profile'/>
 
-### Appointments page
+### All Doctors page
 
-<img src="./client/src/images/appointments.png" alt='appointments'/>
+<img src="./client/src/images/doctors.png" alt='doctors'/>
+
+### Apply for doctor page
+
+<img src="./client/src/images/docapply.png" alt='applyfordoctor'/>
+
+### Admin all users dashboard
+
+<img src="./client/src/images/users.png" alt='users'/>
+
+### Admin all applications page
+
+<img src="./client/src/images/applications.png" alt='applications'/>
+
+### Book Appointment page
+
+<img src="./client/src/images/bookappointment.png" alt='bookappointment'/>
+
+### Users all appointments page
+
+<img src="./client/src/images/userappointments.png" alt='appointments'/>
+
+### Doctors all appointments page
+
+<img src="./client/src/images/doctorappointments.png" alt='appointments'/>
 
 ### Notifications page
 
 <img src="./client/src/images/notifications.png" alt='notifications'/>
-
-### Users page
-
-<img src="./client/src/images/users.png" alt='users'/>
 
 <hr/>
 

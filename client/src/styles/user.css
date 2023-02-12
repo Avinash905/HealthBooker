@@ -1,8 +1,8 @@
 @import url(app.css);
 
 .user-section {
-  width: 75vw;
-  margin: 2rem;
+  width: 80vw;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,9 +15,9 @@
   margin-top: 1.5rem;
 }
 
-h1 {
+h3 {
+  font-size: 2rem;
   text-align: center;
-  font-weight: 300;
 }
 
 table {
@@ -31,9 +31,8 @@ th {
   text-align: center;
   font-weight: 700;
   padding: 0.3rem 1rem;
-  background-color: rgb(143, 188, 255);
+  background-color: rgb(219, 223, 246);
   color: var(--bold-text-color);
-  border: 1px solid gray;
 }
 
 tr {
@@ -41,17 +40,31 @@ tr {
 }
 
 tr:nth-child(2n + 1) {
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(234, 234, 234);
 }
 
 tr:nth-child(2n + 2) {
-  background-color: rgb(210, 228, 255);
+  background-color: rgb(226, 237, 255);
 }
 
 td {
   padding: 10px;
   color: var(--light-text-color);
   text-align: center !important;
+}
+
+.user-table-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(165, 165, 165);
+}
+
+.select {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .user-btn {
@@ -62,6 +75,16 @@ td {
 
 .user-btn:hover {
   background-color: crimson;
+}
+
+.accept-btn {
+  background-color: rgba(0, 128, 0, 0.528);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.accept-btn:hover {
+  background-color: green;
 }
 
 @media (max-width: 1126px) {

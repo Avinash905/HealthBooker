@@ -1,39 +1,14 @@
 @import url(app.css);
 
 .notif-section {
-  width: 75vw;
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 70vh;
+  justify-content: flex-start;
 }
 
-.notif-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1.5rem;
+.disable-btn {
+  cursor: no-drop;
 }
 
-.clear-btn {
-  margin-bottom: 1rem;
-}
-
-.btn-cont {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.green-btn {
-  background-color: rgb(93, 208, 93) !important;
-}
-
-.green-btn:hover {
-  background-color: green !important;
-}
-
-.nothing {
-  color: rgb(187 186 186);
-  font-size: 2.5rem;
-  margin: auto;
+.disable-btn:hover {
+  background-color: rgba(0, 128, 0, 0.528) !important;
 }

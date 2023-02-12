@@ -1,0 +1,45 @@
+@import url(app.css);
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 20px 0 rgba(144, 174, 205, 0.339);
+  align-items: center;
+  position: sticky;
+  top: 0%;
+  background-color: var(--light-blue);
+  z-index: 2;
+}
+
+.nav-logo a,
+.nav-links a {
+  color: var(--bold-text-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links .btn {
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+}
+
+@media (max-width: 1300px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  nav {
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}

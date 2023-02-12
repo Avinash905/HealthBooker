@@ -36,8 +36,9 @@
 }
 
 .sidebar-container a,
-.logout-container a {
+.logout-container p {
   color: var(--white);
+  cursor: pointer;
 }
 
 @media (max-width: 1126px) {

@@ -12,7 +12,11 @@ const schema = mongoose.Schema(
       ref: "User",
       required: true,
     },
-    timing: {
+    date: {
+      type: String,
+      required: true,
+    },
+    time: {
       type: String,
       required: true,
     },

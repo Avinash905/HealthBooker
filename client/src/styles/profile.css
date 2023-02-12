@@ -3,7 +3,7 @@
 .profile-container {
   width: 40%;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .form-same-row {
@@ -13,6 +13,12 @@
 
 .profile-container .form-input {
   width: 100%;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 .gohome {
@@ -35,6 +41,11 @@
 @media (max-width: 655px) {
   .profile-container {
     width: 70%;
+  }
+  .profile-pic {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
   }
 }
 

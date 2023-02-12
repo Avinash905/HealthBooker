@@ -1,0 +1,154 @@
+import React, { useState, useEffect } from "react";
+import "../styles/user.css";
+import axios from "axios";
+import toast from "react-hot-toast";
+import Loading from "./Loading";
+import { setLoading } from "../redux/reducers/rootSlice";
+import { useDispatch, useSelector } from "react-redux";
+import Empty from "./Empty";
+import fetchData from "../helper/apiCall";
+
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
+
+const AdminAppointments = () => {
+  const [appointments, setAppointments] = useState([]);
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.root);
+
+  const getAllAppoint = async (e) => {
+    try {
+      const temp = await fetchData(`/appointment/getallappointments`);
+      setAppointments(temp);
+    } catch (error) {}
+  };
+
+  const deleteUser = async (userId) => {
+    try {
+      const confirm = window.confirm("Are you sure you want to delete?");
+      if (confirm) {
+        const { data } = await toast.promise(
+          axios.delete("/user/deleteuser", {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            data: { userId },
+          }),
+          {
+            pending: "Deleting in...",
+            success: "User deleted successfully",
+            error: "Unable to delete user",
+            loading: "Deleting user...",
+          }
+        );
+        getAllAppoint();
+      }
+    } catch (error) {
+      return error;
+    }
+  };
+
+  useEffect(() => {
+    dispatch(setLoading(true));
+    getAllAppoint();
+    dispatch(setLoading(false));
+  }, []);
+  console.log(appointments);
+
+  const complete = async (ele) => {
+    try {
+      const { data } = await toast.promise(
+        axios.put(
+          "/appointment/completed",
+          {
+            appointid: ele._id,
+            doctorId: ele.doctorId._id,
+            doctorname: `${ele.userId.firstname} ${ele.userId.lastname}`,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        ),
+        {
+          success: "Appointment booked successfully",
+          error: "Unable to book appointment",
+          loading: "Booking appointment...",
+        }
+      );
+
+      getAllAppoint();
+
+      console.log("data", " >> ", data);
+    } catch (error) {
+      return error;
+    }
+  };
+
+  return (
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <section className="user-section">
+          <h3 className="home-sub-heading">All Users</h3>
+          {appointments.length > 0 ? (
+            <div className="user-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Doctor</th>
+                    <th>Patient</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Booking Date</th>
+                    <th>Booking Time</th>
+                    <th>Status</th>
+
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {appointments?.map((ele, i) => {
+                    return (
+                      <tr key={ele._id}>
+                        <td>{i + 1}</td>
+                        <td>
+                          {ele.doctorId.firstname + " " + ele.doctorId.lastname}
+                        </td>
+                        <td>
+                          {ele.userId.firstname + " " + ele.userId.lastname}
+                        </td>
+                        <td>{ele.date}</td>
+                        <td>{ele.time}</td>
+                        <td>{ele.createdAt.split("T")[0]}</td>
+                        <td>{ele.updatedAt.split("T")[1].split(".")[0]}</td>
+                        <td>{ele.status}</td>
+                        <td>
+                          <button
+                            className={`btn user-btn accept-btn ${
+                              ele.status === "Completed" ? "disable-btn" : ""
+                            }`}
+                            disabled={ele.status === "Completed"}
+                            onClick={() => complete(ele)}
+                          >
+                            Complete
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <Empty />
+          )}
+        </section>
+      )}
+    </>
+  );
+};
+
+export default AdminAppointments;

@@ -1,7 +1,7 @@
 @import url(app.css);
 
 .register-section {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -23,7 +23,8 @@
 }
 
 .form-input,
-textarea {
+textarea,
+select {
   font-size: 1rem;
   background-color: rgb(234, 234, 234);
   padding: 0.8rem 1.5rem;
@@ -33,8 +34,15 @@ textarea {
 }
 
 .form-input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form-btn {

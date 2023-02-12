@@ -36,7 +36,7 @@ const schema = mongoose.Schema(
     },
     gender: {
       type: String,
-      default: "",
+      default: "neither",
     },
     mobile: {
       type: Number,
@@ -46,15 +46,14 @@ const schema = mongoose.Schema(
       type: String,
       default: "",
     },
-    notification: [
-      {
-        type: String,
-        default: "",
-      },
-    ],
     status: {
       type: String,
       default: "pending",
+    },
+    pic: {
+      type: String,
+      default:
+        "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     },
   },
   {

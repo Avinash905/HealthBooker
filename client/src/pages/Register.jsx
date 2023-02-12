@@ -3,10 +3,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
+import convertToBase64 from "../helper/convertImage";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Register() {
+  const [file, setFile] = useState("");
   const [formDetails, setFormDetails] = useState({
     firstname: "",
     lastname: "",
@@ -22,6 +24,11 @@ function Register() {
       ...formDetails,
       [name]: value,
     });
+  };
+
+  const onUpload = async (e) => {
+    const base64 = await convertToBase64(e.target.files[0]);
+    setFile(base64);
   };
 
   const formSubmit = async (e) => {
@@ -40,12 +47,17 @@ function Register() {
       } else if (password !== confpassword) {
         return toast.error("Passwords do not match");
       }
+      const pic =
+        file === ""
+          ? "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+          : file;
       const { data } = await toast.promise(
         axios.post("/user/register", {
           firstname,
           lastname,
           email,
           password,
+          pic,
         }),
         {
           pending: "Registering user...",
@@ -54,7 +66,7 @@ function Register() {
           loading: "Registering user...",
         }
       );
-      return navigate("/");
+      return navigate("/login");
     } catch (error) {}
   };
 
@@ -62,7 +74,10 @@ function Register() {
     <section className="register-section flex-center">
       <div className="register-container flex-center">
         <h2 className="form-heading">Sign Up</h2>
-        <form onSubmit={formSubmit} className="register-form">
+        <form
+          onSubmit={formSubmit}
+          className="register-form"
+        >
           <input
             type="text"
             name="firstname"
@@ -88,6 +103,13 @@ function Register() {
             onChange={inputChange}
           />
           <input
+            type="file"
+            onChange={onUpload}
+            name="profile-pic"
+            id="profile-pic"
+            className="form-input"
+          />
+          <input
             type="password"
             name="password"
             className="form-input"
@@ -103,13 +125,19 @@ function Register() {
             value={formDetails.confpassword}
             onChange={inputChange}
           />
-          <button type="submit" className="btn form-btn">
+          <button
+            type="submit"
+            className="btn form-btn"
+          >
             sign up
           </button>
         </form>
         <p>
           Already a user?{" "}
-          <NavLink className="login-link" to={"/"}>
+          <NavLink
+            className="login-link"
+            to={"/login"}
+          >
             Log in
           </NavLink>
         </p>
