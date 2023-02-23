@@ -3,12 +3,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
-import convertToBase64 from "../helper/convertImage";
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Register() {
   const [file, setFile] = useState("");
+  const [loading, setLoading] = useState(false);
   const [formDetails, setFormDetails] = useState({
     firstname: "",
     lastname: "",
@@ -26,14 +26,32 @@ function Register() {
     });
   };
 
-  const onUpload = async (e) => {
-    const base64 = await convertToBase64(e.target.files[0]);
-    setFile(base64);
+  const onUpload = async (element) => {
+    setLoading(true);
+    if (element.type === "image/jpeg" || element.type === "image/png") {
+      const data = new FormData();
+      data.append("file", element);
+      data.append("upload_preset", "zenstore");
+      data.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
+      fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
+        method: "POST",
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((data) => setFile(data.url.toString()));
+      setLoading(false);
+    } else {
+      setLoading(false);
+      toast.error("Please select an image in jpeg or png format");
+    }
   };
 
   const formSubmit = async (e) => {
     try {
       e.preventDefault();
+
+      if (loading) return;
+
       const { firstname, lastname, email, password, confpassword } =
         formDetails;
       if (!firstname || !lastname || !email || !password || !confpassword) {
@@ -104,7 +122,7 @@ function Register() {
           />
           <input
             type="file"
-            onChange={onUpload}
+            onChange={(e) => onUpload(e.target.files[0])}
             name="profile-pic"
             id="profile-pic"
             className="form-input"
@@ -128,6 +146,7 @@ function Register() {
           <button
             type="submit"
             className="btn form-btn"
+            disabled={loading ? true : false}
           >
             sign up
           </button>
