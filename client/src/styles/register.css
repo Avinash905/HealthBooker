@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 20%;
+  margin-top: 150px;
 }
 
 .form-heading {
