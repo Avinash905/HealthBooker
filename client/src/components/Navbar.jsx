@@ -23,7 +23,7 @@ const Navbar = () => {
   const logoutFunc = () => {
     dispatch(setUserInfo({}));
     localStorage.removeItem("token");
-    navigate("/");
+    navigate("/login");
   };
   return (
     <header>
