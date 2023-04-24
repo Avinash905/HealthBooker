@@ -17,8 +17,10 @@ const AdminApplications = () => {
 
   const getAllApp = async (e) => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(`/doctor/getnotdoctors`);
       setApplications(temp);
+      dispatch(setLoading(false));
     } catch (error) {}
   };
 
@@ -79,9 +81,7 @@ const AdminApplications = () => {
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getAllApp();
-    dispatch(setLoading(false));
   }, []);
 
   return (

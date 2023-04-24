@@ -17,8 +17,10 @@ const AdminAppointments = () => {
 
   const getAllAppoint = async (e) => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(`/appointment/getallappointments`);
       setAppointments(temp);
+      dispatch(setLoading(false));
     } catch (error) {}
   };
 
@@ -48,11 +50,8 @@ const AdminAppointments = () => {
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getAllAppoint();
-    dispatch(setLoading(false));
   }, []);
-  console.log(appointments);
 
   const complete = async (ele) => {
     try {
@@ -78,8 +77,6 @@ const AdminAppointments = () => {
       );
 
       getAllAppoint();
-
-      console.log("data", " >> ", data);
     } catch (error) {
       return error;
     }
@@ -115,10 +112,12 @@ const AdminAppointments = () => {
                       <tr key={ele._id}>
                         <td>{i + 1}</td>
                         <td>
-                          {ele.doctorId.firstname + " " + ele.doctorId.lastname}
+                          {ele.doctorId?.firstname +
+                            " " +
+                            ele.doctorId?.lastname}
                         </td>
                         <td>
-                          {ele.userId.firstname + " " + ele.userId.lastname}
+                          {ele.userId?.firstname + " " + ele.userId?.lastname}
                         </td>
                         <td>{ele.date}</td>
                         <td>{ele.time}</td>

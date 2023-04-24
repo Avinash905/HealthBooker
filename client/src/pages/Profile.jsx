@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
-import { NavLink } from "react-router-dom";
 import fetchData from "../helper/apiCall";
 import jwt_decode from "jwt-decode";
 
@@ -30,6 +29,7 @@ function Profile() {
 
   const getUser = async () => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(`/user/getuser/${userId}`);
       setFormDetails({
         ...temp,
@@ -39,13 +39,12 @@ function Profile() {
         age: temp.age === null ? "" : temp.age,
       });
       setFile(temp.pic);
+      dispatch(setLoading(false));
     } catch (error) {}
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getUser();
-    dispatch(setLoading(false));
   }, [dispatch]);
 
   const inputChange = (e) => {
@@ -196,7 +195,7 @@ function Profile() {
                 placeholder="Enter your address"
                 value={formDetails.address}
                 onChange={inputChange}
-                rows="3"
+                rows="2"
               ></textarea>
               <div className="form-same-row">
                 <input
@@ -223,12 +222,6 @@ function Profile() {
                 update
               </button>
             </form>
-            <NavLink
-              to={"/"}
-              className="btn gohome"
-            >
-              Go Home
-            </NavLink>
           </div>
         </section>
       )}

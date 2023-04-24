@@ -21,7 +21,7 @@ const Contact = () => {
       className="register-section flex-center"
       id="contact"
     >
-      <div className="register-container flex-center contact">
+      <div className="contact-container flex-center contact">
         <h2 className="form-heading">Contact Us</h2>
         <form
           method="POST"

@@ -15,15 +15,15 @@ const Notifications = () => {
 
   const getAllNotif = async (e) => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(`/notification/getallnotifs`);
+      dispatch(setLoading(false));
       setNotifications(temp);
     } catch (error) {}
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getAllNotif();
-    dispatch(setLoading(false));
   }, []);
 
   return (

@@ -8,7 +8,7 @@
 .register-container {
   flex-direction: column;
   gap: 2rem;
-  width: 20%;
+  width: 30%;
 }
 
 .form-heading {
@@ -45,11 +45,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.form-btn {
-  width: 50%;
-  margin: 0 auto;
-}
-
 .login-link {
   color: var(--darker-blue);
 }
@@ -57,9 +52,6 @@ input::-webkit-inner-spin-button {
 @media (max-width: 1184px) {
   .register-container {
     width: 30%;
-  }
-  .form-btn {
-    width: 50%;
   }
 }
 

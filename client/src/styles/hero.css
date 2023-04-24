@@ -38,6 +38,9 @@
 }
 
 @media screen and (max-width: 770px) {
+  .hero {
+    height: auto;
+  }
   .hero,
   .about {
     flex-direction: column;

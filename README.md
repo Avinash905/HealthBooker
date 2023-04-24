@@ -29,6 +29,26 @@ This is a webapp where you can book an appointment with a doctor.
 
 <hr/>
 
+### To run the project on your local machine
+
+<ol>
+<li>Download the project from the git repository</li>
+<li>Add .env file in root directory for the backend which contains: MONGO_URI, JWT_SECRET</li>
+<li>Add .env file in client directory for the frontend which contains: REACT_APP_SERVER_DOMAIN (http://123.0.0.1:5000/api), REACT_APP_CLOUDINARY_BASE_URL, REACT_APP_CLOUDINARY_CLOUD_NAME</li>
+<li>To run the backend, go to root directory in the terminal and execute: npm start</li>
+<li>To run the frontend, go to client directory in a separate terminal and execute: npm start</li>
+</ol>
+
+### To access the admin dashboard
+
+<ol>
+<li>Download the project from the git repository</li>
+<li>Add .env file in root directory for the backend which contains: MONGO_URI, JWT_SECRET</li>
+<li>Add .env file in client directory for the frontend which contains: REACT_APP_SERVER_DOMAIN (http://123.0.0.1:5000/api), REACT_APP_CLOUDINARY_BASE_URL, REACT_APP_CLOUDINARY_CLOUD_NAME</li>
+<li>To run the backend, go to root directory in the terminal and execute: npm start</li>
+<li>To run the frontend, go to client directory in a separate terminal and execute: npm start</li>
+</ol>
+
 ### Home page
 
 <img src="./client/src/images/full_pic.png" alt='home'/>

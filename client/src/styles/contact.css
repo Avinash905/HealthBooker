@@ -1,9 +1,29 @@
 @import url(app.css);
 
-.contact {
-  width: 35%;
+.contact-container {
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
 }
 
 .apply-doctor {
   height: 90vh;
+}
+
+@media (max-width: 1000px) {
+  .contact-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-container {
+    width: 70%;
+  }
 }

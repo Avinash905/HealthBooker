@@ -17,8 +17,10 @@ const Users = () => {
 
   const getAllUsers = async (e) => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(`/user/getallusers`);
       setUsers(temp);
+      dispatch(setLoading(false));
     } catch (error) {}
   };
 
@@ -48,9 +50,7 @@ const Users = () => {
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getAllUsers();
-    dispatch(setLoading(false));
   }, []);
 
   return (

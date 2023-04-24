@@ -49,6 +49,10 @@ function Login() {
         }
       );
       localStorage.setItem("token", data.token);
+      console.log(
+        "🚀 ~ file: Login.jsx:52 ~ formSubmit ~ data.token:",
+        data.token
+      );
       dispatch(setUserInfo(jwt_decode(data.token).userId));
       getUser(jwt_decode(data.token).userId);
     } catch (error) {
@@ -60,9 +64,6 @@ function Login() {
     try {
       const temp = await fetchData(`/user/getuser/${id}`);
       dispatch(setUserInfo(temp));
-      if (temp.isAdmin === true) {
-        return navigate("/dashboard/users");
-      }
       return navigate("/");
     } catch (error) {
       return error;

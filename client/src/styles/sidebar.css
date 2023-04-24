@@ -41,6 +41,12 @@
   cursor: pointer;
 }
 
+.sidebar-container a:hover,
+.logout-container p:hover {
+  color: var(--light-text-color);
+  cursor: pointer;
+}
+
 @media (max-width: 1126px) {
   .sidebar-section {
     width: 22vw;

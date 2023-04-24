@@ -1,15 +1,26 @@
-@import url(app.css);
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  /* padding: 10px 10%; */
+  /* height: 72px; */
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  background-color: var(--light-blue);
+  z-index: 2;
+  box-shadow: 0 0 20px 0 rgba(144, 174, 205, 0.339);
+  transition: all 0.2 linear;
+}
 
 nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
-  box-shadow: 0 0 20px 0 rgba(144, 174, 205, 0.339);
   align-items: center;
-  position: sticky;
-  top: 0%;
-  background-color: var(--light-blue);
-  z-index: 2;
 }
 
 .nav-logo a,
@@ -24,8 +35,22 @@ nav {
 
 .nav-links .btn {
   color: var(--white);
-  font-size: 0.9rem;
-  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.menu-icons {
+  display: none;
+  z-index: 100;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.menu-open,
+.menu-close {
+  position: absolute;
+  color: var(--black);
+  cursor: pointer;
 }
 
 @media (max-width: 1300px) {
@@ -35,11 +60,31 @@ nav {
   }
 }
 
-@media (max-width: 850px) {
-  nav {
-    gap: 1rem;
-  }
+@media (max-width: 950px) {
   .nav-links {
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light-blue);
+    flex-direction: column;
+    transform: translateX(100%);
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 20;
+    gap: 3rem;
+    transition: all 0.3s linear;
+  }
+  .nav-active .nav-links {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  .menu-icons {
+    display: block;
+    position: absolute;
+    top: 33%;
+    right: 7%;
   }
 }

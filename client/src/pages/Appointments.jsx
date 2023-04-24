@@ -18,17 +18,17 @@ const Appointments = () => {
 
   const getAllAppoint = async (e) => {
     try {
+      dispatch(setLoading(true));
       const temp = await fetchData(
         `/appointment/getallappointments?search=${userId}`
       );
       setAppointments(temp);
+      dispatch(setLoading(false));
     } catch (error) {}
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     getAllAppoint();
-    dispatch(setLoading(false));
   }, []);
 
   const complete = async (ele) => {
@@ -55,8 +55,6 @@ const Appointments = () => {
       );
 
       getAllAppoint();
-
-      console.log("data", " >> ", data);
     } catch (error) {
       return error;
     }

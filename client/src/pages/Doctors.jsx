@@ -14,22 +14,21 @@ const Doctors = () => {
   const { loading } = useSelector((state) => state.root);
 
   const fetchAllDocs = async () => {
+    dispatch(setLoading(true));
     const data = await fetchData(`/doctor/getalldoctors`);
     setDoctors(data);
+    dispatch(setLoading(false));
   };
 
   useEffect(() => {
-    dispatch(setLoading(true));
     fetchAllDocs();
-    dispatch(setLoading(false));
   }, []);
 
   return (
     <>
       <Navbar />
-      {loading ? (
-        <Loading />
-      ) : (
+      {loading && <Loading />}
+      {!loading && (
         <section className="container doctors">
           <h2 className="page-heading">Our Doctors</h2>
           <div className="doctors-card-container">
