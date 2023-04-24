@@ -43,10 +43,8 @@ This is a webapp where you can book an appointment with a doctor.
 
 <ol>
 <li>Download the project from the git repository</li>
-<li>Add .env file in root directory for the backend which contains: MONGO_URI, JWT_SECRET</li>
-<li>Add .env file in client directory for the frontend which contains: REACT_APP_SERVER_DOMAIN (http://123.0.0.1:5000/api), REACT_APP_CLOUDINARY_BASE_URL, REACT_APP_CLOUDINARY_CLOUD_NAME</li>
-<li>To run the backend, go to root directory in the terminal and execute: npm start</li>
-<li>To run the frontend, go to client directory in a separate terminal and execute: npm start</li>
+<li>You need to create your own MongoDB instance</li>
+<li>Register on the website and manually change the "isAdmin" field in the DB to true and then log in on the site</li>
 </ol>
 
 ### Home page

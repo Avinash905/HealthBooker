@@ -13,11 +13,12 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userInfo = useSelector((state) => state.root.userInfo);
-  const [token, setToken] = useState(localStorage.getItem("token") || null);
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [user, setUser] = useState(
-    jwt_decode(localStorage.getItem("token")) || ""
+    localStorage.getItem("token")
+      ? jwt_decode(localStorage.getItem("token"))
+      : ""
   );
-  console.log("🚀 ~ file: Navbar.jsx:18 ~ Navbar ~ user:", user);
 
   const logoutFunc = () => {
     dispatch(setUserInfo({}));
@@ -37,21 +38,30 @@ const Navbar = () => {
           <li>
             <NavLink to={"/doctors"}>Doctors</NavLink>
           </li>
-          <li>
-            <NavLink to={"/appointments"}>Appointments</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/notifications"}>Notifications</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/applyfordoctor"}>Apply for doctor</NavLink>
-          </li>
-          <li>
-            <HashLink to={"/#contact"}>Contact Us</HashLink>
-          </li>
-          <li>
-            <NavLink to={"/profile"}>Profile</NavLink>
-          </li>
+          {user.isAdmin && (
+            <li>
+              <NavLink to={"/dashboard/users"}>Dashboard</NavLink>
+            </li>
+          )}
+          {!user.isAdmin && (
+            <>
+              <li>
+                <NavLink to={"/appointments"}>Appointments</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/notifications"}>Notifications</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/applyfordoctor"}>Apply for doctor</NavLink>
+              </li>
+              <li>
+                <HashLink to={"/#contact"}>Contact Us</HashLink>
+              </li>
+              <li>
+                <NavLink to={"/profile"}>Profile</NavLink>
+              </li>
+            </>
+          )}
           {!token ? (
             <>
               <li>

@@ -1,5 +1,12 @@
 import React from "react";
-import { FaList, FaUser, FaUserMd, FaUsers, FaEnvelope } from "react-icons/fa";
+import {
+  FaHome,
+  FaList,
+  FaUser,
+  FaUserMd,
+  FaUsers,
+  FaEnvelope,
+} from "react-icons/fa";
 import "../styles/sidebar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
@@ -11,6 +18,11 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const sidebar = [
+    {
+      name: "Home",
+      path: "/",
+      icon: <FaHome />,
+    },
     {
       name: "Users",
       path: "/dashboard/users",
