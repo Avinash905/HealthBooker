@@ -17,7 +17,7 @@ const DoctorCard = ({ ele }) => {
         />
       </div>
       <h3 className="card-name">
-        Dr. {ele.userId.firstname + ele.userId.lastname}
+        Dr. {ele.userId.firstname + " " + ele.userId.lastname}
       </h3>
       <p className="specialization">
         <strong>Specialization: </strong>
