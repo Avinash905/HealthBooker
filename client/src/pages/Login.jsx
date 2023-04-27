@@ -49,10 +49,6 @@ function Login() {
         }
       );
       localStorage.setItem("token", data.token);
-      console.log(
-        "🚀 ~ file: Login.jsx:52 ~ formSubmit ~ data.token:",
-        data.token
-      );
       dispatch(setUserInfo(jwt_decode(data.token).userId));
       getUser(jwt_decode(data.token).userId);
     } catch (error) {

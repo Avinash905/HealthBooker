@@ -7,6 +7,7 @@ import fetchData from "../helper/apiCall";
 import Loading from "../components/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/reducers/rootSlice";
+import Empty from "../components/Empty";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
@@ -31,16 +32,20 @@ const Doctors = () => {
       {!loading && (
         <section className="container doctors">
           <h2 className="page-heading">Our Doctors</h2>
-          <div className="doctors-card-container">
-            {doctors.map((ele) => {
-              return (
-                <DoctorCard
-                  ele={ele}
-                  key={ele._id}
-                />
-              );
-            })}
-          </div>
+          {doctors.length > 0 ? (
+            <div className="doctors-card-container">
+              {doctors.map((ele) => {
+                return (
+                  <DoctorCard
+                    ele={ele}
+                    key={ele._id}
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <Empty />
+          )}
         </section>
       )}
       <Footer />
