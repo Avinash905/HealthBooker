@@ -51,6 +51,7 @@ function Register() {
       e.preventDefault();
 
       if (loading) return;
+      if (file === "") return;
 
       const { firstname, lastname, email, password, confpassword } =
         formDetails;
@@ -65,17 +66,14 @@ function Register() {
       } else if (password !== confpassword) {
         return toast.error("Passwords do not match");
       }
-      const pic =
-        file === ""
-          ? "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-          : file;
+
       const { data } = await toast.promise(
         axios.post("/user/register", {
           firstname,
           lastname,
           email,
           password,
-          pic,
+          pic: file,
         }),
         {
           pending: "Registering user...",
