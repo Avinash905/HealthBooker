@@ -55,7 +55,6 @@ const AdminDoctors = () => {
     getAllDoctors();
   }, []);
 
-  console.log(doctors);
   return (
     <>
       {loading ? (

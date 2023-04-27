@@ -20,6 +20,7 @@ const Users = () => {
       dispatch(setLoading(true));
       const temp = await fetchData(`/user/getallusers`);
       setUsers(temp);
+      console.log("🚀 ~ file: Users.jsx:23 ~ getAllUsers ~ temp:", temp);
       dispatch(setLoading(false));
     } catch (error) {}
   };

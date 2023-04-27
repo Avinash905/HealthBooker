@@ -29,14 +29,9 @@ export const Public = ({ children }) => {
 };
 
 export const Admin = ({ children }) => {
-  const { userId } = jwtDecode(localStorage.getItem("token"));
+  const user = jwtDecode(localStorage.getItem("token"));
 
-  const getUser = async (e) => {
-    const temp = await fetchData(`/user/getuser/${userId}`);
-    return temp.isAdmin;
-  };
-
-  if (getUser()) {
+  if (user.isAdmin) {
     return children;
   }
   return (

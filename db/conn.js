@@ -1,12 +1,19 @@
+const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
-require("dotenv").config();
 mongoose.set("strictQuery", false);
+require("dotenv").config();
 
-const mongodbconn = mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {})
+const client = mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log("DB connected");
+  })
   .catch((error) => {
+    console.log("Error: ", error);
+
     return error;
   });
 
-module.exports = mongodbconn;
+module.exports = client;
