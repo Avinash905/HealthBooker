@@ -31,7 +31,7 @@ function Register() {
     if (element.type === "image/jpeg" || element.type === "image/png") {
       const data = new FormData();
       data.append("file", element);
-      data.append("upload_preset", "zenstore");
+      data.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET);
       data.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
       fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
         method: "POST",
