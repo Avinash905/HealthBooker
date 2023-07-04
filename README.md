@@ -52,7 +52,7 @@ REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
 **Note:** Replace the **{CLOUD_NAME}** with your own cloudinary cloud name
 
 <li>To run the backend, go to root directory in the terminal and execute: npm start</li>
-<li>To run the frontend, open a new terminal and run **cd client/** to go to client directory and execute: npm start</li>
+<li>To run the frontend, open a new terminal and run 'cd client/' to go to client directory and execute: npm start</li>
 </ol>
 
 ### To access the admin dashboard
@@ -60,7 +60,7 @@ REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
 <ol>
 <li>Download the project from the git repository</li>
 <li>You need to create your own MongoDB instance and add the MongoDB url to the .env file</li>
-<li>Register on the website and go to your MongoDB and manually change the **isAdmin** field of the account you want to make admin in the DB to **true** and then log in back on the site</li>
+<li>Register on the website and go to your MongoDB and manually change the 'isAdmin' field of the account you want to make admin in the DB to 'true' and then log in back on the site</li>
 <li>Now you will be able to access the admin dashboard</li>
 </ol>
 
