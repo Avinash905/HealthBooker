@@ -20,7 +20,6 @@ const Users = () => {
       dispatch(setLoading(true));
       const temp = await fetchData(`/user/getallusers`);
       setUsers(temp);
-      console.log("🚀 ~ file: Users.jsx:23 ~ getAllUsers ~ temp:", temp);
       dispatch(setLoading(false));
     } catch (error) {}
   };
@@ -81,27 +80,27 @@ const Users = () => {
                 <tbody>
                   {users?.map((ele, i) => {
                     return (
-                      <tr key={ele._id}>
+                      <tr key={ele?._id}>
                         <td>{i + 1}</td>
                         <td>
                           <img
                             className="user-table-pic"
-                            src={ele.pic}
-                            alt={ele.firstname}
+                            src={ele?.pic}
+                            alt={ele?.firstname}
                           />
                         </td>
-                        <td>{ele.firstname}</td>
-                        <td>{ele.lastname}</td>
-                        <td>{ele.email}</td>
-                        <td>{ele.mobile}</td>
-                        <td>{ele.age}</td>
-                        <td>{ele.gender}</td>
-                        <td>{ele.isDoctor ? "Yes" : "No"}</td>
+                        <td>{ele?.firstname}</td>
+                        <td>{ele?.lastname}</td>
+                        <td>{ele?.email}</td>
+                        <td>{ele?.mobile}</td>
+                        <td>{ele?.age}</td>
+                        <td>{ele?.gender}</td>
+                        <td>{ele?.isDoctor ? "Yes" : "No"}</td>
                         <td className="select">
                           <button
                             className="btn user-btn"
                             onClick={() => {
-                              deleteUser(ele._id);
+                              deleteUser(ele?._id);
                             }}
                           >
                             Remove

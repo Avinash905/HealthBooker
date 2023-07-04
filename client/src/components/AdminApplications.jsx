@@ -111,30 +111,30 @@ const AdminApplications = () => {
                 <tbody>
                   {applications?.map((ele, i) => {
                     return (
-                      <tr key={ele._id}>
+                      <tr key={ele?._id}>
                         <td>{i + 1}</td>
                         <td>
                           <img
                             className="user-table-pic"
                             src={
-                              ele.userId.pic ||
+                              ele?.userId?.pic ||
                               "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
                             }
-                            alt={ele.userId.firstname}
+                            alt={ele?.userId?.firstname}
                           />
                         </td>
-                        <td>{ele.userId.firstname}</td>
-                        <td>{ele.userId.lastname}</td>
-                        <td>{ele.userId.email}</td>
-                        <td>{ele.userId.mobile}</td>
-                        <td>{ele.experience}</td>
-                        <td>{ele.specialization}</td>
-                        <td>{ele.fees}</td>
+                        <td>{ele?.userId?.firstname}</td>
+                        <td>{ele?.userId?.lastname}</td>
+                        <td>{ele?.userId?.email}</td>
+                        <td>{ele?.userId?.mobile}</td>
+                        <td>{ele?.experience}</td>
+                        <td>{ele?.specialization}</td>
+                        <td>{ele?.fees}</td>
                         <td className="select">
                           <button
                             className="btn user-btn accept-btn"
                             onClick={() => {
-                              acceptUser(ele.userId._id);
+                              acceptUser(ele?.userId?._id);
                             }}
                           >
                             Accept
@@ -142,7 +142,7 @@ const AdminApplications = () => {
                           <button
                             className="btn user-btn"
                             onClick={() => {
-                              deleteUser(ele.userId._id);
+                              deleteUser(ele?.userId?._id);
                             }}
                           >
                             Reject

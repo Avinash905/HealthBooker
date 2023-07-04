@@ -37,9 +37,9 @@ const Appointments = () => {
         axios.put(
           "/appointment/completed",
           {
-            appointid: ele._id,
-            doctorId: ele.doctorId._id,
-            doctorname: `${ele.userId.firstname} ${ele.userId.lastname}`,
+            appointid: ele?._id,
+            doctorId: ele?.doctorId?._id,
+            doctorname: `${ele?.userId?.firstname} ${ele?.userId?.lastname}`,
           },
           {
             headers: {
@@ -82,7 +82,7 @@ const Appointments = () => {
                     <th>Booking Date</th>
                     <th>Booking Time</th>
                     <th>Status</th>
-                    {userId === appointments[0].doctorId._id ? (
+                    {userId === appointments[0].doctorId?._id ? (
                       <th>Action</th>
                     ) : (
                       <></>
@@ -92,26 +92,26 @@ const Appointments = () => {
                 <tbody>
                   {appointments?.map((ele, i) => {
                     return (
-                      <tr key={ele._id}>
+                      <tr key={ele?._id}>
                         <td>{i + 1}</td>
                         <td>
-                          {ele.doctorId.firstname + " " + ele.doctorId.lastname}
+                          {ele?.doctorId?.firstname + " " + ele?.doctorId?.lastname}
                         </td>
                         <td>
-                          {ele.userId.firstname + " " + ele.userId.lastname}
+                          {ele?.userId?.firstname + " " + ele?.userId?.lastname}
                         </td>
-                        <td>{ele.date}</td>
-                        <td>{ele.time}</td>
-                        <td>{ele.createdAt.split("T")[0]}</td>
-                        <td>{ele.updatedAt.split("T")[1].split(".")[0]}</td>
-                        <td>{ele.status}</td>
-                        {userId === ele.doctorId._id ? (
+                        <td>{ele?.date}</td>
+                        <td>{ele?.time}</td>
+                        <td>{ele?.createdAt.split("T")[0]}</td>
+                        <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
+                        <td>{ele?.status}</td>
+                        {userId === ele?.doctorId?._id ? (
                           <td>
                             <button
                               className={`btn user-btn accept-btn ${
-                                ele.status === "Completed" ? "disable-btn" : ""
+                                ele?.status === "Completed" ? "disable-btn" : ""
                               }`}
-                              disabled={ele.status === "Completed"}
+                              disabled={ele?.status === "Completed"}
                               onClick={() => complete(ele)}
                             >
                               Complete

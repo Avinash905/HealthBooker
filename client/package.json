@@ -1,8 +1,6 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "https://healthbooker.onrender.com/api",
-  "homepage": "https://healthbooker.onrender.com/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",

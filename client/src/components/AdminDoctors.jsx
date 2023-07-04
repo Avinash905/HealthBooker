@@ -82,27 +82,27 @@ const AdminDoctors = () => {
                 <tbody>
                   {doctors?.map((ele, i) => {
                     return (
-                      <tr key={ele._id}>
+                      <tr key={ele?._id}>
                         <td>{i + 1}</td>
                         <td>
                           <img
                             className="user-table-pic"
-                            src={ele.userId.pic}
-                            alt={ele.userId.firstname}
+                            src={ele?.userId?.pic}
+                            alt={ele?.userId?.firstname}
                           />
                         </td>
-                        <td>{ele.userId.firstname}</td>
-                        <td>{ele.userId.lastname}</td>
-                        <td>{ele.userId.email}</td>
-                        <td>{ele.userId.mobile}</td>
-                        <td>{ele.experience}</td>
-                        <td>{ele.specialization}</td>
-                        <td>{ele.fees}</td>
+                        <td>{ele?.userId?.firstname}</td>
+                        <td>{ele?.userId?.lastname}</td>
+                        <td>{ele?.userId?.email}</td>
+                        <td>{ele?.userId?.mobile}</td>
+                        <td>{ele?.experience}</td>
+                        <td>{ele?.specialization}</td>
+                        <td>{ele?.fees}</td>
                         <td className="select">
                           <button
                             className="btn user-btn"
                             onClick={() => {
-                              deleteUser(ele.userId._id);
+                              deleteUser(ele?.userId?._id);
                             }}
                           >
                             Remove

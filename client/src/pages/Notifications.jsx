@@ -49,11 +49,11 @@ const Notifications = () => {
                 <tbody>
                   {notifications?.map((ele, i) => {
                     return (
-                      <tr key={ele._id}>
+                      <tr key={ele?._id}>
                         <td>{i + 1}</td>
-                        <td>{ele.content}</td>
-                        <td>{ele.updatedAt.split("T")[0]}</td>
-                        <td>{ele.updatedAt.split("T")[1].split(".")[0]}</td>
+                        <td>{ele?.content}</td>
+                        <td>{ele?.updatedAt.split("T")[0]}</td>
+                        <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
                       </tr>
                     );
                   })}
