@@ -6,7 +6,7 @@ import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
-import "./styles/user.css";
+import "../styles/user.css";
 
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;

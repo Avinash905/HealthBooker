@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import toast from "react-hot-toast";
-import "./styles/user.css";
+import "../styles/user.css";
 
 
 const Appointments = () => {
