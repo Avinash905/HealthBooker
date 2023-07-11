@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import fetchData from "../helper/apiCall";
 import { setLoading } from "../redux/reducers/rootSlice";
 import Loading from "../components/Loading";
+import "./styles/user.css";
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
