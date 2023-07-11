@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
