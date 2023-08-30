@@ -115,7 +115,6 @@ npm start
 npm start
 ```
 
-<li>Open http://localhost:5173/ from your browser to run the webapp.</li>
 </ol>
 
 ### To access the admin dashboard
