@@ -1,10 +1,66 @@
-# HealthBooker🧑‍⚕️
+<div id="top">
+<h1 align="center">HealthBooker 🧑‍⚕️</h1>
 
-<h3>Description :</h3> 
-This is a webapp where you can book an appointment with a doctor.
+<div align="center">
+  <br>
+  <img src="https://img.shields.io/github/repo-size/Avinash905/HealthBooker?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/issues-closed-raw/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/last-commit/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/issues-pr/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/issues-pr-closed-raw/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/forks/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/stars/Avinash905/HealthBooker?style=for-the-badge" />
+    <img src="https://img.shields.io/github/contributors-anon/Avinash905/HealthBooker?style=for-the-badge" />
+  </div>
+  <br>
 
-👉[Click here](https://healthbooker.onrender.com/) to check out the app.
+<h3>📝 Description :</h3> 
+Welcome to our comprehensive healthcare platform! Our website offers a seamless experience for users and doctors alike. Sign up or log in to unlock a range of features. Easily browse through a list of available doctors, manage your profile, and submit queries effortlessly. Stay updated with notifications and enjoy secure access to your information. Aspiring doctors can apply through our user-friendly system. Book appointments with your preferred doctors and track their completion status. Admin features ensure smooth operations, including approval of doctor applications and user management. Rest assured, all data is stored securely. Join us to experience a new era of convenient and efficient healthcare interactions.
+
 <br/>
+
+---
+
+### 🌐 Link:
+
+<h4> Live Site: https://healthbooker.onrender.com/ </h4>
+
+<br>
+
+### 🛠️ Tools and technologies used :
+
+<div align=center>
+
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/javascript-8A2BE2?style=for-the-badge&logo=javascript&labelcolor=white)
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white&color=148dff)
+![](https://img.shields.io/badge/Node.js-8A2BE2?style=for-the-badge&logo=Node.js&color=b3ffb0)
+![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&color=008712)
+![](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+
+</div>
+
+<br>
+
+### 👋 Connect with me:
+
+<div align=center>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/dunna-avinash)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Avinash905)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](surajpratap20002003@gmail.com)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/avinashdunna)
+
+</div>
+
+<br>
+
+---
+
+<p align="right"><a href="#top">Back to Top</a></p>
 
 ### 📃Features :
 
@@ -29,6 +85,8 @@ This is a webapp where you can book an appointment with a doctor.
 
 <hr/>
 
+<p align="right"><a href="#top">Back to Top</a></p>
+
 ### To run the project on your local machine
 
 <ol>
@@ -40,6 +98,7 @@ PORT=5000
 MONGO_URI=YOUR_OWN_MONGODB_URL
 JWT_SECRET=YOUR_JWT_SECRET
 ```
+
 <li>Add .env file in client directory for the frontend which contains</li>
 
 ```
@@ -49,6 +108,7 @@ REACT_APP_CLOUDINARY_BASE_URL=https://api.cloudinary.com/v1_1/{CLOUD_NAME}/image
 REACT_APP_CLOUDINARY_CLOUD_NAME=YOUR_OWN_CLOUDINARY_CLOUD_NAME
 REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
 ```
+
 **Note:** Replace the **{CLOUD_NAME}** with your own cloudinary cloud name
 
 <li>To run the backend, go to root directory in the terminal and execute: npm start</li>
@@ -63,6 +123,10 @@ REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
 <li>Register on the website and go to your MongoDB and manually change the 'isAdmin' field of the account you want to make admin in the DB to 'true' and then log in back on the site</li>
 <li>Now you will be able to access the admin dashboard</li>
 </ol>
+
+---
+
+<p align="right"><a href="#top">Back to Top</a></p>
 
 ### Home page
 
@@ -112,21 +176,24 @@ REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
 
 <img src="./client/src/images/notifications.png" alt='notifications'/>
 
-<hr/>
+---
 
-### Tools and technologies used :
-
-<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="35" height="35"/> </a>
-<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="35" height="35"/> </a>
-<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>
-<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://github.com/MarioTerron/logo-images/raw/master/logos/expressjs.png" alt="express"  height="20"/> </a>
-<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a>
-<a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a>
 <br/>
 
-### Connect with me :
+### 🛡️ License
 
-<a href="https://twitter.com/avinashdunna" target="blank"><img align="center" src="https://img.icons8.com/color/48/000000/linkedin.png" alt="Avinash905 | LinkedIn" height="35" width="35" /></a>
-<a href="https://twitter.com/avinashdunna" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="avinashdunna" height="30" width="40" /></a>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+Terms and conditions for use, reproduction and distribution are under the [MIT License](https://opensource.org/license/mit/).
+
+<br/>
+
+---
+
+<h3 align="center"> Give it a 🌟 if you 🧡 this repository </h3>
+
+---
+
+<p align="right"><a href="#top">Back to Top</a></p>
+
+</div>
