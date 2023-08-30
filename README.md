@@ -87,32 +87,37 @@ Welcome to our comprehensive healthcare platform! Our website offers a seamless 
 
 <p align="right"><a href="#top">Back to Top</a></p>
 
-### To run the project on your local machine
+### Steps to run the project on your local machine
 
 <ol>
-<li>Download the project from the git repository</li>
-<li>Add .env file in root directory for the backend which contains</li>
+<li>Fork this repository</li>
+<li>Open terminal or command prompt on your local machine. Run the following command to clone the repository:</li>
 
 ```
-PORT=5000
-MONGO_URI=YOUR_OWN_MONGODB_URL
-JWT_SECRET=YOUR_JWT_SECRET
+git clone https://github.com/your-username/your-repo.git
 ```
 
-<li>Add .env file in client directory for the frontend which contains</li>
+Replace **your-username** with your GitHub username and **your-repo** with the name of your repository.
+
+<li>Open the project and rename <strong>.env.example</strong> files to <strong>.env</strong> in both client and server directory.</li>
+
+<li>Add your own environment variables to these both files.</li>
+
+<li>Add <strong>'http://localhost:5173/'</strong> and <strong>'http://localhost:5000/'</strong> to <strong>allowedOrigins</strong> array present in the path <strong>server/config/allowedOrigins.</strong></li>
+
+<li>To run the backend, open a new terminal and execute: npm start</li>
 
 ```
-
-REACT_APP_SERVER_DOMAIN=http://127.0.0.1:5000/api
-REACT_APP_CLOUDINARY_BASE_URL=https://api.cloudinary.com/v1_1/{CLOUD_NAME}/image/upload
-REACT_APP_CLOUDINARY_CLOUD_NAME=YOUR_OWN_CLOUDINARY_CLOUD_NAME
-REACT_APP_CLOUDINARY_PRESET=YOUR_OWN_CLOUDINARY_PRESET
+npm start
 ```
 
-**Note:** Replace the **{CLOUD_NAME}** with your own cloudinary cloud name
+<li>To run the frontend, open a new terminal and run 'cd client/' to go to client directory and execute: </li>
 
-<li>To run the backend, go to root directory in the terminal and execute: npm start</li>
-<li>To run the frontend, open a new terminal and run 'cd client/' to go to client directory and execute: npm start</li>
+```
+npm start
+```
+
+<li>Open http://localhost:5173/ from your browser to run the webapp.</li>
 </ol>
 
 ### To access the admin dashboard
