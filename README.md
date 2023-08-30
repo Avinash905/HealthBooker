@@ -99,11 +99,9 @@ git clone https://github.com/your-username/your-repo.git
 
 Replace **your-username** with your GitHub username and **your-repo** with the name of your repository.
 
-<li>Open the project and rename <strong>.env.example</strong> files to <strong>.env</strong> in both client and server directory.</li>
+<li>Open the project and rename <strong>.env.example</strong> files to <strong>.env</strong> in both client and root directory.</li>
 
 <li>Add your own environment variables to these both files.</li>
-
-<li>Add <strong>'http://localhost:5173/'</strong> and <strong>'http://localhost:5000/'</strong> to <strong>allowedOrigins</strong> array present in the path <strong>server/config/allowedOrigins.</strong></li>
 
 <li>To run the backend, open a new terminal and execute:</li>
 
