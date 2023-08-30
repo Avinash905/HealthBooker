@@ -105,7 +105,7 @@ Replace **your-username** with your GitHub username and **your-repo** with the n
 
 <li>Add <strong>'http://localhost:5173/'</strong> and <strong>'http://localhost:5000/'</strong> to <strong>allowedOrigins</strong> array present in the path <strong>server/config/allowedOrigins.</strong></li>
 
-<li>To run the backend, open a new terminal and execute: npm start</li>
+<li>To run the backend, open a new terminal and execute:</li>
 
 ```
 npm start
