@@ -65,22 +65,20 @@ Welcome to our comprehensive healthcare platform! Our website offers a seamless 
 ### 📃Features :
 
 <ul>
-<li>User can register and login.</li>
-<li>You can view all available doctors on the site.</li>
-<li>You can also update your profile.</li>
-<li>You can also send your queries to us from the contact section.</li>
-<li>You can view all your notifications in the notifications tab.</li>
-<li>There is also an admin managment system.</li>
-<li>You can only access your notications, profile, appointments, doctor application if you're logged in</li>
-<li>User can also apply for becoming a doctor on our site.</li>
-<li>User can book an appointment with the doctor of their own choice.</li>
-<li>Admin has the control to accept any user's request to become a doctor.</li>
-<li>Admin can also remove any user or doctor from the site.</li>
-<li>Doctor and Admin have the control to mark if the appointment is completed.</li>
-<li>User will recieve notification if their application is accepted or rejected.</li>
-<li>User and Doctor will recieve notification if their appointment is completed.</li>
-<li>Doctor will recieve notification if someone booked appointment with them.</li>
-<li>All the data will be stored on the database so there is no chance of losing you information.</li>
+  <li><strong>User Registration and Login:</strong> Enabling user registration and login functionality is the foundation of any user-oriented platform.</li>
+  <li><strong>View Available Doctors:</strong> Allowing users to easily view the list of available doctors helps them find the right medical professional for their needs.</li>
+  <li><strong>Update Profile:</strong> Providing users with the ability to update their profiles keeps their information accurate and up to date.</li>
+  <li><strong>Contact Section for Queries:</strong> Including a contact section for user queries enhances user engagement and customer support.</li>
+  <li><strong>Notifications Tab:</strong> A notifications tab helps users stay informed about updates, appointments, and application statuses.</li>
+  <li><strong>Admin Management System:</strong> An admin management system is crucial for overseeing users, appointments, and doctor applications.</li>
+  <li><strong>Access Control:</strong> Restricting access to certain sections like notifications, profile, appointments, and doctor applications to logged-in users ensures data privacy and security.</li>
+  <li><strong>Doctor Application:</strong> Allowing users to apply to become a doctor on the site expands the pool of medical professionals and adds value to the platform.</li>
+  <li><strong>Book Appointments:</strong> Enabling users to book appointments with their preferred doctors streamlines the process of accessing medical services.</li>
+  <li><strong>Admin Approval for Doctor Requests:</strong> Admin approval for doctor applications ensures that only qualified professionals are listed on the platform.</li>
+  <li><strong>User and Doctor Removal:</strong> Admin's ability to remove users or doctors from the site is crucial for maintaining the platform's integrity.</li>
+  <li><strong>Appointment Marking:</strong> Allowing doctors and admin to mark appointments as completed ensures proper record-keeping.</li>
+  <li><strong>Application and Appointment Notifications:</strong> Sending notifications to users, doctors, and admins about application statuses and appointment updates enhances communication.</li>
+  <li><strong>Data Storage and Security:</strong> Storing all data in a database ensures data integrity, security, and easy retrieval of information.</li>
 </ul>
 
 <hr/>
