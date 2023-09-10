@@ -27,7 +27,7 @@ const ApplyDoctor = () => {
   const btnClick = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await toast.promise(
+      await toast.promise(
         axios.post(
           "/doctor/applyfordoctor",
           {

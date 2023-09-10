@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom";
-import fetchData from "../helper/apiCall";
 import jwtDecode from "jwt-decode";
 
 export const Protected = ({ children }) => {

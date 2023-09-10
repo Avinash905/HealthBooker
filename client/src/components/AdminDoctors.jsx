@@ -8,7 +8,6 @@ import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
 
-
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 const AdminDoctors = () => {
@@ -29,7 +28,7 @@ const AdminDoctors = () => {
     try {
       const confirm = window.confirm("Are you sure you want to delete?");
       if (confirm) {
-        const { data } = await toast.promise(
+        await toast.promise(
           axios.put(
             "/doctor/deletedoctor",
             { userId },

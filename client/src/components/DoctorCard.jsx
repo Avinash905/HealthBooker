@@ -7,12 +7,12 @@ const DoctorCard = ({ ele }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
-const handleModal=()=>{
-  if(token==""){
-    return toast.error('You must log in first')
-  }
-  setModalOpen(true)
-}
+  const handleModal = () => {
+    if (token === "") {
+      return toast.error("You must log in first");
+    }
+    setModalOpen(true);
+  };
 
   return (
     <div className={`card`}>

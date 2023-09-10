@@ -27,7 +27,7 @@ const Users = () => {
     try {
       const confirm = window.confirm("Are you sure you want to delete?");
       if (confirm) {
-        const { data } = await toast.promise(
+        await toast.promise(
           axios.delete("/user/deleteuser", {
             headers: {
               authorization: `Bearer ${localStorage.getItem("token")}`,

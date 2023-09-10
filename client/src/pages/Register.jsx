@@ -67,7 +67,7 @@ function Register() {
         return toast.error("Passwords do not match");
       }
 
-      const { data } = await toast.promise(
+      await toast.promise(
         axios.post("/user/register", {
           firstname,
           lastname,

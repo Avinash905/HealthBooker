@@ -8,7 +8,6 @@ import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
 
-
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 const AdminApplications = () => {
@@ -29,7 +28,7 @@ const AdminApplications = () => {
     try {
       const confirm = window.confirm("Are you sure you want to accept?");
       if (confirm) {
-        const { data } = await toast.promise(
+        await toast.promise(
           axios.put(
             "/doctor/acceptdoctor",
             { id: userId },
@@ -57,7 +56,7 @@ const AdminApplications = () => {
     try {
       const confirm = window.confirm("Are you sure you want to delete?");
       if (confirm) {
-        const { data } = await toast.promise(
+        await toast.promise(
           axios.put(
             "/doctor/rejectdoctor",
             { id: userId },

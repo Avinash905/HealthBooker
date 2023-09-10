@@ -8,7 +8,6 @@ import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
 
-
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 const AdminAppointments = () => {
@@ -25,38 +24,13 @@ const AdminAppointments = () => {
     } catch (error) {}
   };
 
-  const deleteUser = async (userId) => {
-    try {
-      const confirm = window.confirm("Are you sure you want to delete?");
-      if (confirm) {
-        const { data } = await toast.promise(
-          axios.delete("/user/deleteuser", {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-            data: { userId },
-          }),
-          {
-            pending: "Deleting in...",
-            success: "User deleted successfully",
-            error: "Unable to delete user",
-            loading: "Deleting user...",
-          }
-        );
-        getAllAppoint();
-      }
-    } catch (error) {
-      return error;
-    }
-  };
-
   useEffect(() => {
     getAllAppoint();
   }, []);
 
   const complete = async (ele) => {
     try {
-      const { data } = await toast.promise(
+      await toast.promise(
         axios.put(
           "/appointment/completed",
           {

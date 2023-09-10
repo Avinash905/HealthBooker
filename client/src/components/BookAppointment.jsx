@@ -21,7 +21,7 @@ const BookAppointment = ({ setModalOpen, ele }) => {
   const bookAppointment = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await toast.promise(
+      await toast.promise(
         axios.post(
           "/appointment/bookappointment",
           {

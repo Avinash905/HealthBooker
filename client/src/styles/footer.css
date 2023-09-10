@@ -80,6 +80,10 @@ footer {
   padding: 0.3rem 0;
 }
 
+.footer-bottom a {
+  color: var(--dark-blue);
+}
+
 @media screen and (max-width: 550px) {
   .social ul {
     flex-direction: column;

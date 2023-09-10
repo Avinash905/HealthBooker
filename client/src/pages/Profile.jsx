@@ -81,7 +81,7 @@ function Profile() {
       } else if (password !== confpassword) {
         return toast.error("Passwords do not match");
       }
-      const { data } = await toast.promise(
+      await toast.promise(
         axios.put(
           "/user/updateprofile",
           {
